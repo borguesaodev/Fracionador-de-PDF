@@ -1,0 +1,134 @@
+/* =============================================================================
+   ÁREA DE DRAG & DROP
+   ============================================================================= */
+
+/* Ativado via JS quando o utilizador arrasta um ficheiro sobre a zona */
+.drag-active {
+    border-color: #3b82f6 !important;     /* blue-500 */
+    background-color: #eff6ff !important; /* blue-50  */
+}
+
+/* =============================================================================
+   NOME DO FICHEIRO SELECIONADO
+   Aplicado via JS após a seleção de um ficheiro válido
+   ============================================================================= */
+
+   .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0; /* slate-200 */
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    z-index: 40;
+}
+
+   .btn-voltar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #475569;             /* slate-600 */
+    font-weight: 500;
+    font-size: 0.875rem;        /* text-sm */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.5rem;
+    transition: color 150ms, background-color 150ms, transform 150ms;
+}
+
+.btn-voltar:hover {
+    color: #2563eb;             /* blue-600 */
+    background-color: #eff6ff; /* blue-50  */
+}
+
+.btn-voltar svg {
+    transition: transform 150ms;
+}
+
+.btn-voltar:hover svg {
+    transform: translateX(-3px);
+}
+
+.ficheiro-selecionado {
+    color: #2563eb; /* blue-600 */
+}
+
+/* =============================================================================
+   MENSAGENS DO OVERLAY (estados de feedback)
+   O JS apenas troca a classe — todos os estilos ficam aqui
+   ============================================================================= */
+
+.msg-base {
+    font-size: 0.875rem; /* text-sm     */
+    transition: color 200ms;
+}
+
+.msg-info    { color: #475569; font-weight: 500; } /* slate-600 */
+.msg-success { color: #16a34a; font-weight: 700; } /* green-600 */
+.msg-warning { color: #d97706; font-weight: 500; } /* amber-600 */
+.msg-error   { color: #dc2626; font-weight: 700; } /* red-600   */
+
+/* =============================================================================
+   BOTÃO DE PROCESSAR
+   O JS apenas alterna entre as classes — a aparência fica toda aqui
+   ============================================================================= */
+
+.btn-processar {
+    width: 100%;
+    margin-top: 1.5rem;
+    background-color: #2563eb; /* blue-600 */
+    color: #ffffff;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    transition: background-color 150ms;
+}
+
+.btn-processar:hover:not(:disabled) {
+    background-color: #1d4ed8; /* blue-700 */
+}
+
+/* Sem ficheiro selecionado */
+.btn-processar:disabled {
+    background-color: #cbd5e1; /* slate-300 */
+    cursor: not-allowed;
+}
+
+/* A processar — evita double-click acidental */
+.btn-processando {
+    background-color: #1d4ed8;
+    cursor: wait;
+    opacity: 0.85;
+}
+
+.footer {
+  background: var(--bg-secondary);
+  padding-block: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-1);
+}
+
+.footer .logo { margin-bottom: 15px; }
+
+.copyright {
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+.copyright a {
+  display: inline-block;
+  color: var(--raw-seinna);
+}
